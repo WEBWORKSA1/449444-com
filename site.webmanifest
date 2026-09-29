@@ -1,0 +1,9 @@
+{
+  "name": "449444 — The Number Meaning Lab",
+  "short_name": "449444",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbf8f3",
+  "theme_color": "#d7263d",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
