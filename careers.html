@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Careers at 449444 — Remote Writers, Editors, Developers & Marketers</title>
+<meta name="description" content="Join 449444: remote roles for bilingual Mandarin editors, numerology writers, YouTube editors, front-end developers, SEO marketers and community managers.">
+<link rel="canonical" href="https://449444.com/careers.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest"><meta name="theme-color" content="#d7263d">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="topbar"><a href="https://web.works/contact" rel="noopener">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership</a></div>
+<div id="site-header"></div>
+<main>
+<section class="page-hero"><div class="wrap">
+  <p class="crumbs"><a href="index.html">Home</a> / Careers</p>
+  <span class="eyebrow">Careers · Remote</span>
+  <h1>Build the world's number-meaning platform with us.</h1>
+  <p class="lead">We're a small, remote, fast-moving team working across cultures. Freelance, part-time and commission roles are open now.</p>
+</div></section>
+<section class="section" style="padding-top:12px"><div class="wrap">
+  <div class="grid g2" id="roles"></div>
+  <div class="grid g4" style="margin-top:40px">
+    <div class="card"><div class="ico">🌍</div><h3>100% remote</h3><p class="muted small">Work from anywhere, async-first.</p></div>
+    <div class="card"><div class="ico">⏱️</div><h3>Flexible hours</h3><p class="muted small">Freelance and part-time friendly.</p></div>
+    <div class="card"><div class="ico">📈</div><h3>Revenue share</h3><p class="muted small">Performance bonuses on growth roles.</p></div>
+    <div class="card"><div class="ico">✍️</div><h3>Bylines</h3><p class="muted small">Build your public portfolio.</p></div>
+  </div>
+  <div class="split" style="margin-top:48px">
+    <div><h2>Our hiring process</h2><ol><li>Apply (5 minutes)</li><li>A short paid trial task</li><li>A 20-minute video chat</li><li>Offer and onboarding within about 7 days</li></ol><p class="muted">We welcome applicants of every background. Bilingual English–Chinese skills are a strong plus for most roles.</p></div>
+    <div class="card" id="apply"><h2 style="font-size:1.5rem">Apply now</h2>
+      <form data-form="CAREERS Application" data-ok="Application received — thank you! We review every application and reply within 7 days." novalidate>
+        <div class="row"><div class="field"><label for="jN">Full name</label><input id="jN" name="name" required></div><div class="field"><label for="jE">Email</label><input id="jE" type="email" name="email" required></div></div>
+        <div class="row"><div class="field"><label for="jR">Role</label><select id="jR" name="role" required></select></div><div class="field"><label for="jL">Location / time zone</label><input id="jL" name="location"></div></div>
+        <div class="row"><div class="field"><label for="jLang">Languages</label><input id="jLang" name="languages" placeholder="English, Mandarin…"></div><div class="field"><label for="jRate">Expected rate</label><input id="jRate" name="rate" placeholder="e.g. $25/hr or per article"></div></div>
+        <div class="field"><label for="jP">Portfolio / CV link</label><input id="jP" type="url" name="portfolio" placeholder="https:// (LinkedIn, Drive, GitHub, YouTube…)" required></div>
+        <div class="field"><label for="jW">Why you?</label><textarea id="jW" name="message" required></textarea></div>
+        <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+        <label class="check"><input type="checkbox" name="consent" value="yes" required> I consent to my application data being processed for recruitment.</label>
+        <button class="btn btn-primary btn-block" style="margin-top:12px">Submit application</button><div class="form-msg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/engine.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+(function(){
+  var R=[['Bilingual Mandarin–English Editor','Part-time · Remote','Review and localise number pages and guides. Check the accuracy of characters, pinyin and cultural nuance.'],['Numerology & Spirituality Writer','Freelance · Per article','Write engaging, well-researched angel number, numerology and life-event guides.'],['YouTube / Shorts Video Editor','Freelance · Per video','Turn scripts into punchy 30–90s explainers and long-form videos. Motion graphics are a plus.'],['Front-end Developer (HTML/JS)','Contract · Remote','Build new calculators, static page generation, performance and accessibility.'],['SEO & Growth Marketer','Part-time · Bonus','Keyword strategy, programmatic SEO, backlinks, newsletter and social growth.'],['Community & Contest Manager','Part-time · Remote','Run contests, moderate entries and grow our social communities.'],['Sponsorship Sales Partner','Commission-only','Sell sponsorships, ads and B2B Number Audits. Generous commission.']];
+  document.getElementById('roles').innerHTML=R.map(function(r){return '<div class="card"><span class="tag">'+r[1]+'</span><h3 style="margin-top:10px">'+r[0]+'</h3><p class="muted">'+r[2]+'</p><a class="btn btn-ghost btn-sm" href="#apply" data-role="'+r[0]+'">Apply →</a></div>';}).join('');
+  var s=document.getElementById('jR');s.innerHTML='<option value="">Choose a role…</option>'+R.map(function(r){return '<option>'+r[0]+'</option>';}).join('')+'<option>Open application</option>';
+  document.getElementById('roles').addEventListener('click',function(e){var a=e.target.closest('[data-role]');if(a)s.value=a.dataset.role;});
+})();
+</script>
+</body>
+</html>
