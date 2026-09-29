@@ -53,7 +53,7 @@
   var uniq=[];r.digits.forEach(function(d){if(uniq.indexOf(d.d)<0)uniq.push(d.d);});
   var chineseTxt=r.chinese>=75?'This is a highly sought-after number. Buyers in Hong Kong, mainland China, Taiwan, Singapore and Malaysia often pay a premium for numbers like this on phones, plates and addresses.':r.chinese>=55?'This is a pleasant, mildly lucky number. It is a safe choice for Chinese-speaking customers and families.':r.chinese>=40?'This number is culturally neutral. It will not raise eyebrows, but it will not attract a premium either.':'This number contains sounds many Chinese speakers prefer to avoid, especially 4 (四 sì), which sounds like 死 (death). It may be harder to sell as an address, phone number or price to a Chinese-speaking audience.';
   var h='';
-  h+='<h2>Quick answer</h2><p><strong>'+n+'</strong> '+esc(r.verdict.charAt(0).toLowerCase()+r.verdict.slice(1))+' As an angel number it points to <strong>'+esc(r.angel)+'</strong>. In numerology its digits add to '+r.sum+', which reduces to <strong>'+r.root+'</strong>: '+esc(r.rootMeaning)+'</p>';
+  h+='<h2>Quick answer</h2><p><strong>'+n+'</strong> is '+esc(r.verdict.charAt(0).toLowerCase()+r.verdict.slice(1))+' As an angel number it points to <strong>'+esc(r.angel)+'</strong>. In numerology its digits add to '+r.sum+', which reduces to <strong>'+r.root+'</strong>: '+esc(r.rootMeaning)+'</p>';
   h+='<h2>'+n+' in Chinese culture</h2><p>'+chineseTxt+'</p><div class="table-wrap"><table><thead><tr><th>Digit</th><th>Chinese</th><th>Sounds like</th></tr></thead><tbody>'+uniq.map(function(d){return '<tr><td><strong>'+d+'</strong></td><td class="zh">'+D[d].zh+' '+D[d].py+'</td><td>'+esc(D[d].sound)+'</td></tr>';}).join('')+'</tbody></table></div>';
   if(r.combos.length)h+='<h3>Hidden meanings (number slang)</h3><ul>'+r.combos.map(function(c){return '<li><strong>'+c.code+'</strong> <span class="zh">'+c.zh+'</span> — '+esc(c.meaning)+'</li>';}).join('')+'</ul>';
   h+='<div class="ad-slot" data-slot="inContent"></div>';
@@ -71,7 +71,7 @@
   var v=+n, rel=[];if(n.length<=6){[v-1,v+1,v*2].forEach(function(x){if(x>=0)rel.push(String(x));});}
   rel=rel.concat([n[0]+n[0]+n[0],'888','444','520','1314','168','111','777','999']).filter(function(x,i,a){return x!==n&&a.indexOf(x)===i;}).slice(0,9);
   document.getElementById('related').innerHTML=rel.map(function(x){return '<a class="num-tile" style="font-size:1.05rem" href="number.html?n='+x+'">'+x+'</a>';}).join('');
-  if(!window.SITE.adsenseClient)[].slice.call(document.querySelectorAll('#article .ad-slot')).forEach(function(el){el.innerHTML='Advertisement space · <a href="advertise.html">Advertise here</a>';});
+  [].slice.call(document.querySelectorAll('#article .ad-slot')).forEach(function(el){if(!SITE.adsenseClient){el.innerHTML='Advertisement space · <a href="advertise.html">Advertise here</a>';return;}el.classList.add('live');el.innerHTML='<ins class="adsbygoogle" style="display:block" data-ad-client="'+SITE.adsenseClient+'"'+(SITE.adSlots.inContent?' data-ad-slot="'+SITE.adSlots.inContent+'"':'')+' data-ad-format="auto" data-full-width-responsive="true"></ins>';try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}});
 })();
 </script>
 </body>
