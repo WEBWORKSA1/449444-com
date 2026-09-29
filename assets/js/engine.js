@@ -35,7 +35,7 @@
   function pattern(s) {
     var p = [];
     if (s.length > 1 && /^(\d)\1+$/.test(s)) p.push('Repdigit — the energy of ' + s[0] + ' is amplified ' + s.length + '×');
-    if (s.length > 2 && s === s.split('').reverse().join('')) p.push('Mirror (palindrome) — balance, reflection, things coming full circle');
+    if (s.length > 2 && !/^(\d)\1+$/.test(s) && s === s.split('').reverse().join('')) p.push('Mirror (palindrome) — balance, reflection, things coming full circle');
     var asc = true, desc = true; for (var i = 1; i < s.length; i++) { if (+s[i] !== +s[i - 1] + 1) asc = false; if (+s[i] !== +s[i - 1] - 1) desc = false; }
     if (s.length > 2 && asc) p.push('Ascending sequence — progress, step-by-step growth');
     if (s.length > 2 && desc) p.push('Descending sequence — release, simplifying, letting go');
@@ -49,7 +49,7 @@
     var s = clean(input); if (!s) return null;
     var digits = s.split('').map(function (d) { var x = D[d]; return { d: d, zh: x.zh, py: x.py, sound: x.sound, w: x.w, angel: x.angel }; });
     var avg = digits.reduce(function (a, b) { return a + b.w; }, 0) / digits.length;
-    var cb = combos(s); var bonus = cb.reduce(function (a, c) { return a + c.w * 3; }, 0);
+    var cb = combos(s); var bonus = cb.reduce(function (a, c) { return a + c.w * 6; }, 0);
     var chinese = Math.max(1, Math.min(99, Math.round(50 + avg * 12.5 + bonus)));
     var sum = digitSum(s), root = reduce(sum), pat = pattern(s);
     var uniq = Object.keys(pat.counts).length;
