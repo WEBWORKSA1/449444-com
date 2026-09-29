@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Number Meaning — Chinese, Angel Number & Numerology | 449444</title>
+<meta name="description" content="What does this number mean? Its Chinese luck, angel number meaning, numerology root, and meaning in love, career and money.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest"><meta name="theme-color" content="#d7263d">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="topbar"><a href="https://web.works/contact" rel="noopener">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership</a></div>
+<div id="site-header"></div>
+<main>
+<section class="page-hero"><div class="wrap">
+  <p class="crumbs"><a href="index.html">Home</a> / <a href="numbers.html">Numbers</a> / <span id="crumbN"></span></p>
+  <span class="eyebrow">Number meaning</span>
+  <h1 id="title">Number meaning</h1>
+  <p class="lead" id="intro"></p>
+  <form class="num-search inline-form" style="max-width:460px;margin-top:16px"><input inputmode="numeric" placeholder="Look up another number" aria-label="Look up another number"><button class="btn btn-primary">Go</button></form>
+</div></section>
+
+<section class="section" style="padding-top:12px"><div class="wrap split">
+  <article class="prose" id="article"></article>
+  <aside>
+    <div class="card" style="margin-bottom:20px"><span class="eyebrow">Instant decode</span><div id="quick"></div></div>
+    <div class="card" style="margin-bottom:20px"><h3>Is this <em>your</em> number?</h3><p class="muted small">Phone, plate, address, price or birthday? Get a hand-reviewed report on what it means for you, with better alternatives.</p><a class="btn btn-primary btn-block" id="ctaReport" href="report.html">Get my number report →</a></div>
+    <div class="ad-slot" data-slot="top" style="min-height:250px"></div>
+    <div class="card"><h3>Related numbers</h3><div class="tiles" id="related" style="grid-template-columns:repeat(3,1fr)"></div></div>
+  </aside>
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/engine.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+(function(){
+  var E=NumberEngine, raw=new URLSearchParams(location.search).get('n')||'449444', n=E.clean(raw)||'449444', r=E.decode(n), D=E.digits;
+  var cap=function(s){return s.charAt(0).toUpperCase()+s.slice(1);};
+  var isAngel=/^(\d)\1+$/.test(n)&&n.length>=3;
+  document.title=(isAngel?'Angel Number ':'Number ')+n+' Meaning: Chinese Luck, Numerology & Love | 449444';
+  var desc='What does '+n+' mean? Chinese luck score '+r.chinese+'/100, numerology root '+r.root+', angel number meaning ('+r.angel+') and what it means for love, career and money.';
+  var md=document.querySelector('meta[name=description]');md.setAttribute('content',desc);
+  var can=document.createElement('link');can.rel='canonical';can.href='https://449444.com/number.html?n='+n;document.head.appendChild(can);
+  document.getElementById('crumbN').textContent=n;
+  document.getElementById('title').textContent=(isAngel?'Angel Number ':'')+n+' Meaning';
+  document.getElementById('intro').textContent='What '+n+' means in Chinese culture, as an angel number and in numerology, plus what to do when you keep seeing it.';
+  document.getElementById('ctaReport').href='report.html?n='+n;
+  document.getElementById('quick').innerHTML=renderDecode(r,{noCta:true});
+  var uniq=[];r.digits.forEach(function(d){if(uniq.indexOf(d.d)<0)uniq.push(d.d);});
+  var chineseTxt=r.chinese>=75?'This is a highly sought-after number. Buyers in Hong Kong, mainland China, Taiwan, Singapore and Malaysia often pay a premium for numbers like this on phones, plates and addresses.':r.chinese>=55?'This is a pleasant, mildly lucky number. It is a safe choice for Chinese-speaking customers and families.':r.chinese>=40?'This number is culturally neutral. It will not raise eyebrows, but it will not attract a premium either.':'This number contains sounds many Chinese speakers prefer to avoid, especially 4 (四 sì), which sounds like 死 (death). It may be harder to sell as an address, phone number or price to a Chinese-speaking audience.';
+  var h='';
+  h+='<h2>Quick answer</h2><p><strong>'+n+'</strong> '+esc(r.verdict.charAt(0).toLowerCase()+r.verdict.slice(1))+' As an angel number it points to <strong>'+esc(r.angel)+'</strong>. In numerology its digits add to '+r.sum+', which reduces to <strong>'+r.root+'</strong>: '+esc(r.rootMeaning)+'</p>';
+  h+='<h2>'+n+' in Chinese culture</h2><p>'+chineseTxt+'</p><div class="table-wrap"><table><thead><tr><th>Digit</th><th>Chinese</th><th>Sounds like</th></tr></thead><tbody>'+uniq.map(function(d){return '<tr><td><strong>'+d+'</strong></td><td class="zh">'+D[d].zh+' '+D[d].py+'</td><td>'+esc(D[d].sound)+'</td></tr>';}).join('')+'</tbody></table></div>';
+  if(r.combos.length)h+='<h3>Hidden meanings (number slang)</h3><ul>'+r.combos.map(function(c){return '<li><strong>'+c.code+'</strong> <span class="zh">'+c.zh+'</span> — '+esc(c.meaning)+'</li>';}).join('')+'</ul>';
+  h+='<div class="ad-slot" data-slot="inContent"></div>';
+  h+='<h2>Angel number '+n+' meaning</h2><p>In Western angel-number tradition, repeated or striking numbers are read as messages. The dominant energy here is <strong>'+r.dominant+'</strong>: '+esc(r.angel)+'.'+(r.pattern.length?' Pattern: '+esc(r.pattern.join('; '))+'.':'')+'</p>';
+  h+='<h3>'+n+' meaning in love</h3><p>'+esc(cap(r.love))+'.</p><h3>'+n+' meaning for career &amp; money</h3><p>'+esc(cap(r.career))+'.</p><div class="callout"><strong>What to do when you see '+n+':</strong> '+esc(cap(r.action))+'.</div>';
+  h+='<h2>'+n+' in numerology</h2><p>Sum of digits: '+r.digits.map(function(d){return d.d;}).join(' + ')+' = '+r.sum+(r.sum!==r.root?' → '+r.root:'')+'. <strong>'+esc(r.rootMeaning)+'</strong></p>';
+  var faq=[['Is '+n+' a lucky number in Chinese culture?',r.verdict+' Chinese luck score: '+r.chinese+'/100.'],['What does angel number '+n+' mean?','It signals '+r.angel+'. When you see it: '+r.action+'.'],['What is the numerology of '+n+'?','Its digits add to '+r.sum+', reducing to '+r.root+'. '+r.rootMeaning],['Should I use '+n+' as a phone number, plate or address?',r.chinese>=55?'Yes. For Chinese-speaking audiences it reads positively.':'If your audience is Chinese-speaking, consider alternatives without 4, ideally ending in 8, 6 or 9. For Western audiences it carries little stigma.']];
+  h+='<h2>FAQ</h2>'+faq.map(function(q){return '<details><summary>'+esc(q[0])+'</summary><p>'+esc(q[1])+'</p></details>';}).join('');
+  h+='<h2>Watch</h2><div class="grid g2"><a class="topic-card" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query='+encodeURIComponent(n+' angel number meaning')+'"><b>'+n+' angel number videos</b><span>Explainers on YouTube</span></a><a class="topic-card" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query='+encodeURIComponent('chinese lucky numbers')+'"><b>Chinese lucky numbers</b><span>Culture explainers</span></a></div>';
+  h+='<div id="shareN"></div><p class="small muted" style="margin-top:20px">Updated '+new Date().toLocaleDateString(undefined,{year:'numeric',month:'long'})+' · By the 449444 Editorial Team · <a href="about.html#methodology">Methodology</a> · For cultural and entertainment purposes.</p>';
+  document.getElementById('article').innerHTML=h;
+  document.getElementById('shareN').innerHTML=shareBar('What does '+n+' mean? Chinese luck, angel number & numerology');
+  var ld={'@context':'https://schema.org','@type':'FAQPage','mainEntity':faq.map(function(q){return {'@type':'Question','name':q[0],'acceptedAnswer':{'@type':'Answer','text':q[1]}};})};
+  var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify(ld);document.head.appendChild(s);
+  var v=+n, rel=[];if(n.length<=6){[v-1,v+1,v*2].forEach(function(x){if(x>=0)rel.push(String(x));});}
+  rel=rel.concat([n[0]+n[0]+n[0],'888','444','520','1314','168','111','777','999']).filter(function(x,i,a){return x!==n&&a.indexOf(x)===i;}).slice(0,9);
+  document.getElementById('related').innerHTML=rel.map(function(x){return '<a class="num-tile" style="font-size:1.05rem" href="number.html?n='+x+'">'+x+'</a>';}).join('');
+  if(!window.SITE.adsenseClient)[].slice.call(document.querySelectorAll('#article .ad-slot')).forEach(function(el){el.innerHTML='Advertisement space · <a href="advertise.html">Advertise here</a>';});
+})();
+</script>
+</body>
+</html>

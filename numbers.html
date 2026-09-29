@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Number Dictionary: Angel Numbers, Chinese Number Slang & Lucky Combos | 449444</title>
+<meta name="description" content="Browse the meaning of any number: angel numbers 000–9999, Chinese number slang (520, 1314, 168, 94) and lucky and unlucky combinations.">
+<link rel="canonical" href="https://449444.com/numbers.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest"><meta name="theme-color" content="#d7263d">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="topbar"><a href="https://web.works/contact" rel="noopener">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership</a></div>
+<div id="site-header"></div>
+<main>
+<section class="page-hero"><div class="wrap">
+  <p class="crumbs"><a href="index.html">Home</a> / Numbers</p>
+  <span class="eyebrow">Number dictionary</span>
+  <h1>The meaning of every number</h1>
+  <p class="lead">Search any number, or browse angel numbers, Chinese number slang and famous lucky and unlucky combinations.</p>
+  <form class="num-search inline-form" style="max-width:520px;margin-top:16px"><input inputmode="numeric" placeholder="Type any number, e.g. 5201314" aria-label="Search a number"><button class="btn btn-primary">Look up</button></form>
+</div></section>
+
+<section class="section" style="padding-top:12px"><div class="wrap">
+  <h2>Angel numbers (repeating)</h2>
+  <div class="tiles" id="angel"></div>
+
+  <h2 style="margin-top:48px">Chinese number slang &amp; combos</h2>
+  <p class="muted">Chinese speakers use sound-alike digits as shorthand in texts, prices, dates and plates. Red tags are best avoided in business.</p>
+  <div class="tiles" id="combos"></div>
+
+  <div class="ad-slot" data-slot="inContent"></div>
+
+  <h2>Single digits 0–9</h2>
+  <div class="table-wrap"><table><thead><tr><th>Digit</th><th>Chinese</th><th>Sounds like</th><th>Angel meaning</th></tr></thead><tbody id="digits"></tbody></table></div>
+
+  <h2 style="margin-top:48px">Browse by range</h2>
+  <div class="tabs" id="ranges"></div>
+  <div class="tiles" id="rangeOut" style="grid-template-columns:repeat(auto-fill,minmax(72px,1fr))"></div>
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/engine.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+(function(){
+  var E=NumberEngine,a=[];for(var d=0;d<10;d++){a.push(''+d+d+d);a.push(''+d+d+d+d);}
+  a.sort(function(x,y){return x.length-y.length||x.localeCompare(y);});
+  document.getElementById('angel').innerHTML=a.map(function(n){return '<a class="num-tile" href="number.html?n='+n+'">'+n+'<small>'+E.digits[n[0]].angel.split(',')[0]+'</small></a>';}).join('');
+  var C=E.combosTable;document.getElementById('combos').innerHTML=Object.keys(C).map(function(k){var c=C[k];return '<a class="num-tile" style="border-color:'+(c[2]>0?'rgba(31,138,112,.45)':c[2]<0?'rgba(215,38,61,.45)':'var(--line)')+'" href="number.html?n='+k+'">'+k+'<small class="zh">'+c[0]+'</small><small>'+esc(c[1])+'</small></a>';}).join('');
+  var D=E.digits;document.getElementById('digits').innerHTML=Object.keys(D).map(function(k){return '<tr><td><a href="number.html?n='+k+'"><strong>'+k+'</strong></a></td><td class="zh">'+D[k].zh+' '+D[k].py+'</td><td>'+esc(D[k].sound)+'</td><td>'+esc(D[k].angel)+'</td></tr>';}).join('');
+  var R=[[0,99],[100,199],[200,299],[300,399],[400,499],[500,599],[600,699],[700,799],[800,899],[900,999]],rb=document.getElementById('ranges'),ro=document.getElementById('rangeOut');
+  rb.innerHTML=R.map(function(r,i){return '<button class="tab" data-i="'+i+'" aria-selected="'+(i===4)+'">'+r[0]+'–'+r[1]+'</button>';}).join('');
+  function show(i){var r=R[i],h='';for(var n=r[0];n<=r[1];n++){h+='<a class="num-tile" style="font-size:1rem;padding:10px 4px" href="number.html?n='+n+'">'+n+'</a>';}ro.innerHTML=h;[].forEach.call(rb.children,function(b){b.setAttribute('aria-selected',b.dataset.i==i);});}
+  rb.addEventListener('click',function(e){if(e.target.dataset.i)show(+e.target.dataset.i);});show(4);
+})();
+</script>
+</body>
+</html>
